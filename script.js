@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     })
 
-    variableCashInflowCheckbox.addEventListener("change", renderYearInput);
+    variableCashInflowCheckbox.addEventListener("change", renderYearInput(variableCashInflowCheckbox, years));
 
-    years.addEventListener("change", renderYearInput);
+    years.addEventListener("change", renderYearInput(variableCashInflowCheckbox, years));
 
 
 
@@ -129,7 +129,7 @@ function calculateIRR(NPV, initialInvestment, years, discountRate, cashInflows) 
 
 
 
-function renderYearInput() {
+function renderYearInput(variableCashInflowCheckbox, years) {
 
     let label = document.querySelector("#cashInflowsInput");
 
