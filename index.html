@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>
+        NPV Calculator
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="mainDiv">
+        <h1>
+            Net Present Value (NPV) and Internal Rate of Return (IRR) Calculator
+        </h1>
+        <p>
+            With this tool you can calculate the NPV with a simple input
+        </p>
+
+        <div id="formDiv">
+
+            <form class="row g-3">
+                <select required class="form-select">
+                    <option disabled selected value=""> --Select Currency--</option>
+                    <option value="$"> Dollars ($)</option>
+                    <option value="$MXN"> Mexican Pesos ($MXN)</option>
+                    <option value="£"> British Pounds (£) </option>
+
+                </select>
+
+
+
+                <input placeholder="Initial Investment" id="initialInvestment" required type="number"
+                    class="form-control">
+                <input placeholder="Discount Rate (%)" id="discountRate" required type="number" class="form-control">
+                <input placeholder="Years" id="years" required type="number" class="form-control">
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="checkbox">
+                    <label class="form-check-label" for="exampleCheck1">Variable Cash Inflow</label>
+                </div>
+
+
+                <label id="cashInflowsInput" class="label">
+                    <p>
+                        Yearly Cash inflow ($)
+                    </p>
+                    <input placeholder="Amount" required id=cashinput1 type="number">
+                </label>
+
+                <button class="btn btn-primary">Calculate</button>
+            </form>
+
+
+        </div>
+    </div>
+    <footer>
+        Fer Tirado® 2025 All Rights Reserved
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
