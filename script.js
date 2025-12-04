@@ -50,11 +50,55 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     })
 
-    variableCashInflowCheckbox.addEventListener("change", renderYearInput(variableCashInflowCheckbox, years));
+    variableCashInflowCheckbox.addEventListener("change", function () {
 
-    years.addEventListener("change", renderYearInput(variableCashInflowCheckbox, years));
+        let label = document.querySelector("#cashInflowsInput");
+
+        if (variableCashInflowCheckbox.checked) {
+
+            let html = '<p>Yearly Cash inflow ($) </p>';
 
 
+            for (let i = 0; i < years.value; i++) {
+
+                html = html + `<input placeholder="Year ${i + 1}'s amount" id = cashinput${i} required type="number">`
+
+            }
+
+            label.innerHTML = html;
+
+        } else {
+
+            label.innerHTML = '<p>Yearly Cash inflow ($) </p> <input placeholder = "Amount" id=cashinput1 required type="number"> ';
+
+        }
+
+    })
+
+    years.addEventListener("change", function () {
+
+        let label = document.querySelector("#cashInflowsInput");
+
+        if (variableCashInflowCheckbox.checked) {
+
+            let html = '<p>Yearly Cash inflow ($) </p>';
+
+
+            for (let i = 0; i < years.value; i++) {
+
+                html = html + `<input placeholder="Year ${i + 1}'s amount" id = cashinput${i} required type="number">`
+
+            }
+
+            label.innerHTML = html;
+
+        } else {
+
+            label.innerHTML = '<p>Yearly Cash inflow ($) </p> <input placeholder = "Amount" id=cashinput1 required type="number"> ';
+
+        }
+
+    })
 
 });
 
@@ -128,28 +172,3 @@ function calculateIRR(NPV, initialInvestment, years, discountRate, cashInflows) 
 }
 
 
-
-function renderYearInput(variableCashInflowCheckbox, years) {
-
-    let label = document.querySelector("#cashInflowsInput");
-
-    if (variableCashInflowCheckbox.checked) {
-
-        let html = '<p>Yearly Cash inflow ($) </p>';
-
-
-        for (let i = 0; i < years.value; i++) {
-
-            html = html + `<input placeholder="Year ${i + 1}'s amount" id = cashinput${i} required type="number">`
-
-        }
-
-        label.innerHTML = html;
-
-    } else {
-
-        label.innerHTML = '<p>Yearly Cash inflow ($) </p> <input placeholder = "Amount" id=cashinput1 required type="number"> ';
-
-    }
-
-}
